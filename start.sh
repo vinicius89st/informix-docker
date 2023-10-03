@@ -30,6 +30,8 @@ if [ ! -e "/home/informix/.initialized" ] ; then
 	onspaces -c -t -d tmpspace -p /home/informix/spaces/tmpspace_dat.000 -o 0 -s 1000000
 
 	echo "CREATE DATABASE mediaxp IN dbspace WITH BUFFERED LOG" | dbaccess
+	
+	echo "GRANT DBA TO informix;" | dbaccess "mediaxp" > /dev/null 2>&1
 
 	echo "register ifxbuiltins.1.1 mediaxp"|blademgr
 	echo "register LLD.1.20.FC2 mediaxp"|blademgr
