@@ -44,6 +44,9 @@ if [ ! -e "/home/informix/.initialized" ] ; then
 	cp /home/informix/onconfig.ol_database /home/informix/data/etc/onconfig.ol_database
 	chown informix.informix /home/informix/data/etc/*
 	chmod 770 /home/informix/data/etc/*
+	chmod 770 /home/informix/explorit/*
+	chown -R informix.informix /home/informix/explorit
+	chown informix.informix /home/informix/explorit/*
 	
 fi
 
